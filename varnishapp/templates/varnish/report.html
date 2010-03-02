@@ -1,9 +1,15 @@
 {% extends 'admin/change_list.html' %}
-{% load humanize %} 
+{% load humanize i18n %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="../">{% trans 'Home' %}</a> &rsaquo;
+    {% trans 'Varnish' %}
+</div>
+{% endblock %}
+
 {% block content %}
-
 <form><input type="text" name="command"/><input type="submit" value="Run command"/></form>
-
 <table><tr>
     {% if stats %}
         {% for server,report in stats %}

@@ -4,5 +4,5 @@ from manager import VarnishManager
 
 
 urlpatterns = patterns('varnishapp.views',
-    (r'', 'management'),
+    url(r'', 'management', name="django_varnish_management"),
 )
